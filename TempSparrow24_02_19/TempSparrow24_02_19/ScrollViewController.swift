@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController, UIGestureRecognizerDelegate {
 	
 	// MARK: - Constants
 	
@@ -39,6 +39,7 @@ class ScrollViewController: UIViewController {
 	private func setupUI() {
 		view.backgroundColor = .systemBackground
 		navigationController?.setNavigationBarHidden(true, animated: true)
+		navigationController?.interactivePopGestureRecognizer?.delegate = self
 		
 		view.addSubview(scrollView)
 		
